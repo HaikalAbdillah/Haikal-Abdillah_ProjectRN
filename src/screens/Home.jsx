@@ -1,10 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
+import Foto from '../assets/img/fav.png';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <View>
-      <Text>Home</Text>
+      <Text></Text>
+      {/* <Image
+        source={require('../assets/img/fav.png')} /> */}
+        <TouchableOpacity onPress={() => navigation.navigate('Profile') }>
+      <Image 
+        source={Foto} style={{height: 50, width: 50}}  />
+        </TouchableOpacity>
     </View>
   )
 }

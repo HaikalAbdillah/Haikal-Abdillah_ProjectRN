@@ -1,14 +1,15 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
+import Oto from '../assets/img/fav.png';
 
 
 const IconScreen = ({label}) => {
     return (
         <TouchableOpacity style={styles.container}>
             <View style={styles.box}>
-                <Text>Kotak</Text>
+                <Text></Text>
             </View>
-            <Text>{label}</Text>
+            <Text style={{ textAlign:'center',}} >{label}</Text>
         </TouchableOpacity>
     );
 };
@@ -29,6 +30,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: 50,
         height: 50,
-        borderRadius: 10,
+        borderRadius: 10,  
     },
 });

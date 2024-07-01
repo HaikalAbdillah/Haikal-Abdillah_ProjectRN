@@ -1,12 +1,11 @@
 import { StyleSheet, Text, View, FlatList} from 'react-native';
 import React from 'react';
-import About from './screens/About';
 import Home from '../src/screens/Home';
+import Profile from './screens/Profile';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import Profile from './screens/Profile';
-import Pesan from './screens/Pesan';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const Stack = createNativeStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -14,10 +13,17 @@ const Tabs = createBottomTabNavigator();
 const MenuTab =() =>{
   return (
     <Tabs.Navigator>
-      <Tabs.Screen name="Home" component={Home}/>
-      <Tabs.Screen name="About" component={About}/>
-      <Tabs.Screen name="Pesan" component={Pesan}/>
-      <Tabs.Screen name="Profile" component={Profile}/>
+      <Tabs.Screen name="Home" component={Home} options={{
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="home" color={color} size={26}/>
+        ),
+
+      }}/>
+      <Tabs.Screen name="Profile" component={Profile} options={{
+         tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="wallpaper" color={color} size={26}/>
+         ),
+      }}/>
     </Tabs.Navigator>
   );
 };
