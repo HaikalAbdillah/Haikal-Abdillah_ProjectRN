@@ -8,7 +8,6 @@ import {
   ScrollView,
   StatusBar,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const Halaman = () => {
   const [dataBuku, setDataBuku] = useState([
@@ -38,22 +37,73 @@ const Halaman = () => {
       author: 'Community',
     },
   ]);
+  
+  const [dataBuku1, setDataBuku1] = useState([
+    {
+      judul: 'Bintang',
+      image: require('../assets/img/bintang.jpeg'),
+      author: 'tereliye',
+    },
+    {
+      judul: 'Bulan',
+      image: require('../assets/img/bulan.jpeg'),
+      author: 'tereliye',
+    },
+    {
+      judul: 'Bumi',
+      image: require('../assets/img/bumi.jpeg'),
+      author: 'tereliye',
+    },
+    {
+      judul: 'Komet',
+      image: require('../assets/img/komet.jpeg'),
+      author: 'tereliye',
+    },
+    {
+      judul: 'Matahari',
+      image: require('../assets/img/matahari.jpeg'),
+      author: 'tereliye',
+    },
+  ]);
+  
+  const [dataBuku2, setDataBuku2] = useState([
+    {
+      judul: 'Artificial Intelegent',
+      image: require('../assets/img/mtk.jpeg'),
+      author: '',
+    },
+    {
+      judul: 'Intelengent Teknology',
+      image: require('../assets/img/pb.jpeg'),
+      author: '',
+    },
+    {
+      judul: 'Intelengent Teknology',
+      image: require('../assets/img/ai.jpeg'),
+      author: '',
+    },
+    {
+      judul: 'Intelengent Teknology',
+      image: require('../assets/img/it.jpeg'),
+      author: '',
+    },
 
+  ]);
   const [daftarRekomendasi, setDaftarRekomendasi] = useState([
     {
-      judul: '7 Buku Pemrograman terbaik',
-      deskripsi: '7 buku pemrograman ini sangan recomended untuk dibaca',
+      judul: 'Rekomendasi Pemograman',
+      deskripsi: 'React Native',
       image: require('../assets/img/programming_react_native.png'),
     },
     {
-      judul: '7 Buku Pemrograman terbaik',
-      deskripsi: '7 buku pemrograman ini sangan recomended untuk dibaca',
-      image: require('../assets/img/programming_react_native.png'),
+      judul: 'Rekomendasi Matematika',
+      deskripsi: 'Matematika',
+      image: require('../assets/img/mtk.jpeg'),
     },
     {
-      judul: '7 Buku Pemrograman terbaik',
-      deskripsi: '7 buku pemrograman ini sangan recomended untuk dibaca',
-      image: require('../assets/img/programming_react_native.png'),
+      judul: 'Rekomendasi Novel',
+      deskripsi: 'Bulan',
+      image: require('../assets/img/bulan.jpeg'),
     },
   ]);
 
@@ -84,7 +134,6 @@ const Halaman = () => {
                 <TouchableOpacity
                   style={{
                     backgroundColor: '#FFFFFF',
-
                     marginTop: 10,
                     flexDirection: 'row',
                     marginRight: 20,
@@ -117,12 +166,12 @@ const Halaman = () => {
           </View>
         </View>
 
-        <View style={{marginLeft: 5, marginTop: 20}}>
+        <View style={{marginLeft: 20, marginTop: 20}}>
           <View style={{flexDirection: 'row', marginRight: 10}}>
             <Text style={{fontWeight: 'bold', color: '#212121'}}>
               React Native
             </Text>
-            <TouchableOpacity
+            <TouchableOpacity 
               style={{
                 flex: 1,
                 justifyContent: 'center',
@@ -136,11 +185,11 @@ const Halaman = () => {
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({item}) => (
-              <TouchableOpacity
+              <TouchableOpacity 
                 style={{
                   width: 150,
                   backgroundColor: '#FFFFFF',
-
+                  
                   justifyContent: 'center',
                   alignItems: 'flex-start',
                   marginTop: 10,
@@ -159,7 +208,7 @@ const Halaman = () => {
 
         <View style={{marginLeft: 20, marginTop: 20, marginBottom: 20}}>
           <View style={{flexDirection: 'row', marginRight: 10}}>
-            <Text style={{fontWeight: 'bold', color: '#212121'}}>Java</Text>
+            <Text style={{fontWeight: 'bold', color: '#212121'}}>Novel</Text>
             <TouchableOpacity
               style={{
                 flex: 1,
@@ -170,7 +219,7 @@ const Halaman = () => {
             </TouchableOpacity>
           </View>
           <FlatList
-            data={dataBuku}
+            data={dataBuku1}
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({item}) => (
@@ -194,10 +243,51 @@ const Halaman = () => {
             )}
           />
         </View>
-        <View style={{marginLeft: 20, marginTop: 20, marginBottom: 20}}>
+                  <View style={{marginLeft: 20, marginTop: 20, marginBottom: 20}}>
+                    <View style={{flexDirection: 'row', marginRight: 10}}>
+                      <Text style={{fontWeight: 'bold', color: '#212121'}}>AI</Text>
+                      <TouchableOpacity
+                        style={{
+                          flex: 1,
+                          justifyContent: 'center',
+                          alignItems: 'flex-end',
+                        }}>
+                        <Text>Lihat Semua</Text>
+                      </TouchableOpacity>
+                    </View>
+                    <FlatList
+                      data={dataBuku2}
+                      horizontal
+                      showsHorizontalScrollIndicator={false}
+                      renderItem={({item}) => (
+                        <TouchableOpacity
+                          style={{
+                            width: 150,
+                            backgroundColor: '#FFFFFF',
+                            
+                            justifyContent: 'center',
+                            alignItems: 'flex-start',
+                            marginTop: 10,
+                          }}>
+                          <Image
+                            source={item.image}
+                            style={{width: 130, height: 150, borderRadius: 5}}
+                            resizeMode="contain"
+                          />
+                          <Text style={{fontWeight: 'bold'}}>{item.judul}</Text>
+                          <Text style={{fontSize: 14}}>{item.author}</Text>
+                        </TouchableOpacity>
+                      )}
+                    />
+                  </View>
+
+
+                  <View style={{marginLeft: 20, marginTop: 20}}>
           <View style={{flexDirection: 'row', marginRight: 10}}>
-            <Text style={{fontWeight: 'bold', color: '#212121'}}>C++</Text>
-            <TouchableOpacity
+            <Text style={{fontWeight: 'bold', color: '#212121'}}>
+              Komik
+            </Text>
+            <TouchableOpacity 
               style={{
                 flex: 1,
                 justifyContent: 'center',
@@ -207,22 +297,21 @@ const Halaman = () => {
             </TouchableOpacity>
           </View>
           <FlatList
-            data={dataBuku}
+            data={dataBuku1}
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({item}) => (
-              <TouchableOpacity
+              <TouchableOpacity 
                 style={{
                   width: 150,
                   backgroundColor: '#FFFFFF',
-
                   justifyContent: 'center',
                   alignItems: 'flex-start',
                   marginTop: 10,
                 }}>
                 <Image
                   source={item.image}
-                  style={{width: 130, height: 150, borderRadius: 5}}
+                  style={{width: 130, height: 150, borderRadius: 10}}
                   resizeMode="contain"
                 />
                 <Text style={{fontWeight: 'bold'}}>{item.judul}</Text>
@@ -231,8 +320,49 @@ const Halaman = () => {
             )}
           />
         </View>
+
+        <View style={{marginLeft: 20, marginTop: 20, marginBottom: 20}}>
+                <View style={{flexDirection: 'row', marginRight: 10}}>
+                <Text style={{fontWeight: 'bold', color: '#212121'}}>DLL</Text>
+                      <TouchableOpacity
+                        style={{
+                          flex: 1,
+                          justifyContent: 'center',
+                          alignItems: 'flex-end',
+                        }}>
+                        <Text>Lihat Semua</Text>
+                      </TouchableOpacity>
+                    </View>
+                    <FlatList
+                      data={dataBuku}
+                      horizontal
+                      showsHorizontalScrollIndicator={false}
+                      renderItem={({item}) => (
+                        <TouchableOpacity
+                          style={{
+                            width: 150,
+                            backgroundColor: '#FFFFFF',
+                            
+                            justifyContent: 'center',
+                            alignItems: 'flex-start',
+                            marginTop: 10,
+                          }}>
+                          <Image
+                            source={item.image}
+                            style={{width: 130, height: 150, borderRadius: 5}}
+                            resizeMode="contain"
+                          />
+                          <Text style={{fontWeight: 'bold'}}>{item.judul}</Text>
+                          <Text style={{fontSize: 14}}>{item.author}</Text>
+                        </TouchableOpacity>
+                      )}
+                    />
+                    
+                  </View>
       </ScrollView>
     </View>
+
+    
   );
 };
 
