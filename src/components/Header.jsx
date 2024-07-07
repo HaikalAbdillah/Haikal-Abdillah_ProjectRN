@@ -9,8 +9,8 @@ const Header = props => {
         backgroundColor: '#50B498',
         paddingBottom: 30,
         paddingHorizontal: 20,
-        borderBottomRightRadius: 7,
-        borderBottomLeftRadius: 7,
+        borderBottomRightRadius: 10,
+        borderBottomLeftRadius: 10,
         elevation: 10,
       }}>
       <View style={{flexDirection: 'row', marginTop: 20}}>

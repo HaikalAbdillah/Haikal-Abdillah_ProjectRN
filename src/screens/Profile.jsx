@@ -11,10 +11,10 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 const Profile = () => {
   return (
     <View style={{flex: 1}}>
-      <StatusBar barStyle={'light-content'} backgroundColor="#212121" />
+      <StatusBar barStyle={'dark-content'} backgroundColor="#50B498" />
       <ImageBackground
         source={require('../assets/img/back.png')}
-        style={{flex: 0.2}}
+        style={{flex: 0.4}}
         resizeMode={'cover'}>
         <View style={{flex: 0.5}}></View>
       </ImageBackground>

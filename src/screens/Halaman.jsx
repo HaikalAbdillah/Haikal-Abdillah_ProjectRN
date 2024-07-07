@@ -323,7 +323,7 @@ const Halaman = () => {
 
         <View style={{marginLeft: 20, marginTop: 20, marginBottom: 20}}>
                 <View style={{flexDirection: 'row', marginRight: 10}}>
-                <Text style={{fontWeight: 'bold', color: '#212121'}}>DLL</Text>
+                <Text style={{fontWeight: 'bold', color: '#212121'}}>dll</Text>
                       <TouchableOpacity
                         style={{
                           flex: 1,
